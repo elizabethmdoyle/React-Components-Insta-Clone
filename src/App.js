@@ -34,8 +34,23 @@ const App = () => {
       The callback passed into `map` performs the following logic:
         - if the `id` of the post matches `postId`, return a new post object with the desired values (use the spread operator).
         - otherwise just return the post object unchanged.
+
+        higher order functions
+        map = loop over an array and do something and return a new array
+        filter = loop over an array and based on an condition, return particular elements into a new array
+        reduce = loop over and reduce the array into a single value
+        find = loop over an array based on a condition and return the FIRST element that matches the condition
      */
 
+        const updatedPosts = posts.map((post) => {
+          if (posts.id === postId) {
+            return {...post, likes: post.likes + 1}
+          } else {
+            return posts
+          }
+        })
+
+        setPosts(updatedPosts)
         
   };
 
